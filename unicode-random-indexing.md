@@ -19,6 +19,7 @@ Suppose that you find yourself with a string containing a bunch of people's name
 Catherine the Great
 藤原定家
 Thorin II Oakenshield, son of Thráin, son of Thrór, King under the Mountain
+Billy Danger
 ```
 
 The first obvious thing you'd want to do with this is to split it -- find the substrings, like "Catherine the Great", that contain the individual names. You can do this by going through the code points and splitting on line feeds, U+000A -- our good old friend `'\n'`. So far, easy.
