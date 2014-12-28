@@ -1,5 +1,6 @@
 title: Trivial caching with a simplified hash table
 date: 2015-01-01
+hidden: yes
 
 [Hash tables](https://en.wikipedia.org/wiki/Hash_table) are pretty simple: [hash](https://en.wikipedia.org/wiki/Hash_function) your key to get an array index to look in for the value, and handle collisions... somehow. Most of the complexity comes from how you handle hash collisions. Now suppose that you handle them *by not handling them:* when you're trying to write to the hash table, just overwrite anything that's already there. This will give you a [cache](https://en.wikipedia.org/wiki/Cache_%28computing%29): you put things in, but they might disappear. Newer things will tend to replace older ones.
 
