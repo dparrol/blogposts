@@ -1,0 +1,21 @@
+body {
+    color: #333;
+    font-family: sans-serif;
+    margin-left: auto; margin-right: auto;
+    max-width: 1000px;
+    padding: 1em;
+    font-size: 12pt;
+    line-height: 1.3;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    text-shadow: 1px 1px 2px #ddd;
+}
+
+h1 { font-size: 20pt; }
+h2 { font-size: 14pt; }
+h3 { font-size: 12pt; }
+
+/* Minified pygments stylesheet for code syntax highlighting. */
+.hll{background-color:#ffc}.c{color:#998;font-style:italic}.err{color:#a61717;background-color:#e3d2d2}.k,.o{color:#000;font-weight:700}.cm{color:#998;font-style:italic}.cp{color:#999;font-weight:700;font-style:italic}.c1{color:#998;font-style:italic}.cs{color:#999;font-weight:700;font-style:italic}.gd{color:#000;background-color:#fdd}.ge{color:#000;font-style:italic}.gr{color:#a00}.gh{color:#999}.gi{color:#000;background-color:#dfd}.go{color:#888}.gp{color:#555}.gs{font-weight:700}.gu{color:#aaa}.gt{color:#a00}.kc,.kd,.kn,.kp,.kr{color:#000;font-weight:700}.kt{color:#458;font-weight:700}.m{color:#099}.s{color:#d01040}.na{color:teal}.nb{color:#0086B3}.nc{color:#458;font-weight:700}.no{color:teal}.nd{color:#3c5d5d;font-weight:700}.ni{color:purple}.ne,.nf,.nl{color:#900;font-weight:700}.nn{color:#555}.nt{color:navy}.nv{color:teal}.ow{color:#000;font-weight:700}.w{color:#bbb}.mf,.mh,.mi,.mo{color:#099}.s2,.sb,.sc,.sd,.se,.sh,.si,.sx{color:#d01040}.sr{color:#009926}.s1{color:#d01040}.ss{color:#990073}.bp{color:#999}.vc,.vg,.vi{color:teal}.il{color:#099}
