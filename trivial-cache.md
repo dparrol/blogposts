@@ -21,7 +21,7 @@ Making a cache just requires allocating some memory to hold it, and making sure 
 
 ```c
 #define CACHE_SIZE 128
-cache_t *cacheCreate(void) {
+cache_t cacheCreate(void) {
     return calloc(CACHE_SIZE, sizeof(payload_t));
 }
 ```
