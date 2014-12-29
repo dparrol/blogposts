@@ -14,7 +14,11 @@ Let's write some code. I'll use C, the lingua franca of people whose concern for
 typedef char* key_t;
 typedef char* payload_t;
 // A cache is just an array of slots where we can put payloads.
-typedef payload_t* cache_t;
+typedef struct {
+    key_t key; 
+    payload_t value;
+} cache_entry_t;
+typedef cache_entry_t* cache_t;
 ```
 
 Making a cache just requires allocating some memory to hold it, and making sure it's initially blank:
@@ -22,7 +26,7 @@ Making a cache just requires allocating some memory to hold it, and making sure 
 ```c
 #define CACHE_SIZE 128
 cache_t cacheCreate(void) {
-    return calloc(CACHE_SIZE, sizeof(payload_t));
+    return calloc(CACHE_SIZE, sizeof(cache_entry_t));
 }
 ```
 
@@ -31,8 +35,10 @@ To insert a key-value pair into the cache, hash your key and put it in there.
 ```c
 void cacheInsert(cache_t cache, key_t key, payload_t payload) {
     int i = hash(key) % CACHE_SIZE; // Get position in cache
-    free(cache[i]);                 // Evict anything already there
-    cache[i] = payload;             // Put new payload in place
+    free(cache[i].key);             // Evict anything already there
+    free(cache[i].value);
+    cache[i].key = key;             // Put new payload in place
+    cache[i].value = payload;
 }
 ```
 
@@ -41,8 +47,8 @@ To look up something, it's just like a hash table lookup except without any coll
 ```c
 payload_t cacheGet(cache_t cache, key_t key) {
     int i = hash(key) % CACHE_SIZE;
-    if (cache[i] && keys_equal(cache[i], key)) {
-        return cache[i];        // We found the key! :-D
+    if (cache[i].key && keys_equal(cache[i].key, key)) {
+        return cache[i].value;  // We found the key! :-D
     } 
     return NULL;                // We didn't find the key. :-(
 }
