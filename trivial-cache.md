@@ -55,3 +55,5 @@ value_t cacheGet(cache_t cache, key_t key) {
 ```
 
 There you have it: an in-memory cache, with negligible overhead, in just a few lines of simple code. Fun, right?
+
+(Want complete, runnable code? [Here's a repo.](https://github.com/dparrol/hashcache))
